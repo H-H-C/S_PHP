@@ -17,7 +17,7 @@
 	{
 		echo $a . 'は5以上ではありません';
 	}
-	
+	echo 'aaa';
 ?>
 </body>
 </html>
