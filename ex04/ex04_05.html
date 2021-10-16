@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="ex04_05.php" method="POST"> 
+<table>
+	<tr>
+		<th>氏名:</th>
+		<td><input type="text" name="name" value=""></td>
+	</tr>
+	<tr>
+		<th>住所:</th>
+		<td><textarea name="adr" rows="" cols=""></textarea></td>
+	</tr>
+	<tr><th>年齢:</th>
+		<td><input type="radio" name="age" value="20歳未満">20歳未満<br/>
+			<input type="radio" name="age" value="20歳代">20歳代<br/>
+			<input type="radio" name="age" value="30歳代">30歳代<br/>
+			<input type="radio" name="age" value="40歳代">40歳代<br/>
+			<input type="radio" name="age" value="50歳以上">50歳以上
+		</td>
+	</tr>
+	<tr><th>同居:</th>
+	<td><input type="checkbox" name="doukyo[]" value="配偶者">配偶者<br/>
+		<input type="checkbox" name="doukyo[]" value="子供">子供<br/>
+		<input type="checkbox" name="doukyo[]" value="孫">孫<br/>
+		<input type="checkbox" name="doukyo[]" value="兄弟姉妹">兄弟姉妹<br/>
+		<input type="checkbox" name="doukyo[]" value="親">親<br/>
+		<input type="checkbox" name="doukyo[]" value="祖父、祖母">祖父、祖母<br/>
+		<input type="checkbox" name="doukyo[]" value="親類">親類<br/>
+		<input type="checkbox" name="doukyo[]" value="友人">友人
+		
+	</td>
+	</tr>
+</table>
+
+</form>
+
+</body>
+</html>
