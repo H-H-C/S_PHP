@@ -1,24 +1,24 @@
 
 <?php
   $errmsg = [];
-  $pflg = 0;
 
   //自作関数
   function h($item)
   {
-    return htmlspecialchars($item,ENT_QUOTES);
+    return htmlspecialchars($item, ENT_QUOTES);
   }
 
   
   //POSTリクエスト
   if ($_SERVER['REQUEST_METHOD'] == 'POST') 
   {
-    $pflg = 1;
     //関数宣言
     $nick = h($_POST['nick']);
+    // $nick = htmlspecialchars($_POST["nick"], ENT_QUOTES);
+
 		if(!strlen($nick))
     {
-      $errmsg = '値が入力されていません';
+      $errmsg[] = '値が入力されていません';
     }
     else
 		{
@@ -28,7 +28,7 @@
   }
   else  //GETなら
   {
-    $errmsg = 'htmlから入力してください';
+    $errmsg[] = 'htmlから入力してください';
   }
 ?>
 
@@ -41,14 +41,17 @@
   <title>ex10_01</title>
 </head>
 <body>
-  <h1>クッキー保存</h1>
-  <?php
-      foreach($errmsg as $value) 
-      {
-        echo $value . '<br />';
-      }
-  ?>
-  <?php
+<h1>クッキー保存</h1>
+<div id="err">
+<?php
+	// エラーメッセージ表示
+	foreach($errmsg as $val)
+	{
+		echo $val, "<br />";
+	}
+?>
+</div>
+<?php
 	if(!count($errmsg))
 	{
 		echo "ニックネームを保存しました";
