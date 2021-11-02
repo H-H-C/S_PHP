@@ -14,8 +14,6 @@
   {
     //関数宣言
     $nick = h($_POST['nick']);
-    // $nick = htmlspecialchars($_POST["nick"], ENT_QUOTES);
-
 		if(!strlen($nick))
     {
       $errmsg[] = '値が入力されていません';
