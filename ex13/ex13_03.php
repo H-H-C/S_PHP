@@ -1,0 +1,48 @@
+<?php
+$errmsg = [];   //エラーメッセージ
+$filename = 'data/ex13_01.txt'; //ファイル名
+$data = [];   //読み込みファイル
+$msg = '';    //処理結果
+
+
+//ファイル：オープン（読み込みrモード）
+if (($data = file($filename)) === FALSE)
+{
+  $errmsg[] = $filename . 'モード：rオープンエラー';  //読み込み権限がなかったら
+}
+else
+{
+  foreach ($data as $val)
+  {
+    $val = rtrim($val); //ホワイトスペース・改行コードを削除
+    $msg .= $val . '<br />';
+  }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex13_03</title>
+</head>
+
+<body>
+  <h1>ファイル読み込み</h1>
+  <?php
+  foreach ($errmsg as $val)
+  {
+    echo $val . '<br />';
+  }
+  if (count($errmsg))
+  {
+    echo "<br />";
+  }
+  ?>
+  <?= $msg ?>
+</body>
+
+</html>
